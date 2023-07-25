@@ -3,7 +3,8 @@ name: Automated API tests using Postman CLI
 on: push
 
 jobs:
-  automated-api-tests:
+  test_the_action:
+    if: "!contains(github.event.head_commit.message, 'OCAPI')"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
